@@ -16,11 +16,11 @@ function inherit (C, P) {
 
 let Parent = function(name) {
     this.name = name || "Adam";
-}
+};
 
 let Child = function(name) {
     Parent.apply(this, arguments);
-}
+};
 
 let kid = new Child();
 kid.hasOwnProperty('name'); //true
@@ -35,14 +35,14 @@ kid.hasOwnProperty('name'); //true
 
 let Parent = function(name) {
 	this.name = name || "Adam";
-}
+};
 Parent.prototype.say = function() {
 	return this.name;
-}
+};
 
 let Cild = function(name) {
 	Parent.apply(this, arguments);
-}
+};
 Child.prototype = new Parent();
 
 let kid = new Child("Patryk");
